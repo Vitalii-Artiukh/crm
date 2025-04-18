@@ -36,7 +36,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
         <div className="flex gap-6">
           <div className="flex flex-col flex-1 gap-5">
             <LogoUploader label="Logo" placeholder="Upload photo" />
-            <InputField label="Status" placeholder="Name" name="name" />
+            <InputField label="Status" placeholder="Status" name="status" />
             <InputField label="Country" placeholder="Country" name="country" />
           </div>
           <div className="flex flex-col flex-1 gap-5">
