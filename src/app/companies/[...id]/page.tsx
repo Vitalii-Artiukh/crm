@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from '@/app/components/header';
 
-export interface PageProps {
-  params: { id: string[] };
+interface PageProps {
+  params: Promise<{ id: string[] }>;
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
   return (
-    <>
-      <Header>Companies ({String(params.id)})</Header>
-      <p>{new Date().toTimeString()}</p>
-    </>
+    <div>
+      <Header>Companies ({String(id)})</Header>
+      <p className="p-3">{new Date().toTimeString()}</p>
+    </div>
   );
 }
