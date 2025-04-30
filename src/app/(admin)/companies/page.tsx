@@ -19,7 +19,7 @@ export default function Page({}: PageProps) {
         </Toolbar>
         <CompanyTable>
           <CompanyRow
-            id={1}
+            id={'Costco'}
             category={'Products'}
             company={'Costco'}
             status={Status.Pending}

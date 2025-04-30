@@ -4,7 +4,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 export interface CompanyRowProps {
-  id: number;
+  id: string;
   category: string;
   company: string;
   status: Status;
