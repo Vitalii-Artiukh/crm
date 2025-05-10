@@ -9,7 +9,7 @@ export const getSummaryStats = () => {
 
 export const getSummarySales = () => {
   const items = [];
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 5; i++) {
     items.push({
       companyId: i + 1,
       companyTitle: 'Costco Wholesale',
@@ -23,12 +23,12 @@ export const getSummarySales = () => {
 
 export const getSummaryPromotions = () => {
   const items = [];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 1; i < 7; i++) {
     items.push({
       promotionId: i + 1,
-      promotionsName: 'Lorem ipsum dolor',
-      companyTitle: 'Costco Wholesale',
-      discount: 40,
+      promotionsName: `Lorem ipsum dolor `,
+      companyTitle: `Costco Wholesale Id${i}`,
+      discount: 40 - i * 3,
     });
   }
 
@@ -50,7 +50,7 @@ export const getSummaryCategories = () => {
     {
       categoryId: 3,
       categoryTitle: 'Products',
-      count: 28,
+      count: 26,
     },
     {
       categoryId: 4,
@@ -75,7 +75,7 @@ export const getSummaryCategories = () => {
     {
       categoryId: 8,
       categoryTitle: 'Products',
-      count: 4,
+      count: 12,
     },
   ]);
 };

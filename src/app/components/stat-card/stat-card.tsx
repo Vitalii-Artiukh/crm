@@ -28,7 +28,7 @@ export default function StatCard({ type, label, counter }: StatCardProps) {
     >
       <p
         className={clsx(
-          'text-left before:h-0.5 before:rounded',
+          'text-left before:h-0.5 before:rounded before:w-4',
           type === StatCardType.Dark &&
             'text-sm mb-1 text-zinc-50 before:block before:mb-2 before:bg-zinc-50',
           type === StatCardType.Gradient &&
