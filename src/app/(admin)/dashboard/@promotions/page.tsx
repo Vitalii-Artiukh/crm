@@ -3,16 +3,12 @@ import DashboardCard from '@/app/components/dashboard-card';
 import SummaryTable from '@/app/components/summary-table';
 import SummaryTableHeader from '@/app/components/summary-table-header';
 import SummaryTableCell from '@/app/components/summary-table-cell';
-import { getSummaryPromotions } from '@/lib/api';
+import { getPromotions } from '@/lib/api';
 
 export interface PageProps {}
 
 export default async function Page({}: PageProps) {
-  const data: any = await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(getSummaryPromotions());
-    }, 4000);
-  });
+  const data = await getPromotions();
 
   return (
     <DashboardCard label="Promotions">
@@ -25,25 +21,13 @@ export default async function Page({}: PageProps) {
           </>
         }
       >
-        {data.map(
-          ({
-            promotionId,
-            promotionsName,
-            companyTitle,
-            discount,
-          }: {
-            promotionId: string;
-            promotionsName: string;
-            companyTitle: string;
-            discount: number;
-          }) => (
-            <tr key={promotionId}>
-              <SummaryTableCell>{companyTitle}</SummaryTableCell>
-              <SummaryTableCell>{promotionsName}</SummaryTableCell>
-              <SummaryTableCell align="center">{`-${discount}%`}</SummaryTableCell>
-            </tr>
-          ),
-        )}
+        {data.map(({ id, title, companyTitle, discount }) => (
+          <tr key={id}>
+            <SummaryTableCell>{companyTitle}</SummaryTableCell>
+            <SummaryTableCell>{title}</SummaryTableCell>
+            <SummaryTableCell align="center">{`-${discount}%`}</SummaryTableCell>
+          </tr>
+        ))}
       </SummaryTable>
     </DashboardCard>
   );
