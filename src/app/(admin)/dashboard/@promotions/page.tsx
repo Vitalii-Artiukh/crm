@@ -11,7 +11,7 @@ export default async function Page({}: PageProps) {
   const data = await getPromotions();
 
   return (
-    <DashboardCard label="Promotions">
+    <DashboardCard label="Promotion">
       <SummaryTable
         headers={
           <>
