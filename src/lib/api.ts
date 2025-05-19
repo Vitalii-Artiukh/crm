@@ -1,5 +1,3 @@
-import { init } from 'next/dist/server/typescript/utils';
-
 export interface SummaryStats {
   promotions: number;
   categories: number;
